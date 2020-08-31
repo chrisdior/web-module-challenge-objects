@@ -1,7 +1,7 @@
 ///////////////Menu Items (MVP)///////////////////
 
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const burger = {name: "Burger", price: 18, category: "Lunch"};
+var burger = {name: "Burger", price: 18, category: "Lunch"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
@@ -33,22 +33,20 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
-let hamburger = {
-  name: "Burgerdiscount",
-  price: 18.1,
-  category: "lunch",
+ burger = {
+  name: burger.name,
+  price: burger.price,
+  category: burger.category,
   discount: function (val) {
     if (val === "teacher") {
-      return this.price - 0.23 * this.price;
+      return burger.price - 0.25 * burger.price;
     } else {
-      return this.price - 0.1 * this.price;
+      return burger.price - 0.1 * burger.price;
     }
   },
 };
-
-console.log(hamburger.discount("teacher"));
-console.log(hamburger.discount("student"));
-
+console.log(burger.discount("teacher"))
+console.log(burger.discount())
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -101,10 +99,10 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
 function getLastReview(arr) {
-  return (arr[arr.length ]);
-} 
+    return (arr[arr.length - 1]);
+  } 
 
-console.log(getLastReview(reviews)) // Keeps getting undefined!??
+console.log(getLastReview(reviews))// Keep gettiing undefined!??
 
 
 
